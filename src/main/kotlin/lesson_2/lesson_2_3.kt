@@ -14,8 +14,8 @@ fun main() {
 
     val arrivalHour = actualArrivalMinutesInDay / 60 //час прибытия
     val arrivalMinute = actualArrivalMinutesInDay % 60 //минуты прибытия
-
     val formattedTime = "%02d:%02d".format(arrivalHour, arrivalMinute)
+
     println("$formattedTime")
 
 }
