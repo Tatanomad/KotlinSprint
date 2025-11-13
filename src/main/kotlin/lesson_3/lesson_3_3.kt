@@ -13,6 +13,5 @@ fun main() {
      |$inputNumber * 8 = ${inputNumber * 8}
      |$inputNumber * 9 = ${inputNumber * 9}
  """.trimMargin()
-
     println("$multiplicationTable")
 }
