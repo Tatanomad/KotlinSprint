@@ -1,9 +1,9 @@
 package lesson_3
 
 fun main() {
-    var userFirstName = "Татьяна"
+    val userFirstName = "Татьяна"
     var userLastName = "Андреева"
-    var userPatronymic = "Сергеевна"
+    val userPatronymic = "Сергеевна"
     var userAge = 20
     println("$userLastName $userFirstName $userPatronymic,$userAge")
     userAge = 22
