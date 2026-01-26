@@ -2,17 +2,16 @@ package lesson_5
 
 fun main() {
     println("Введите первое число")
-    val a = readln().toInt()
+    val inputFirst = readln().toInt()
     println("Введите второе число")
-    val b = readln().toInt()
-    val winFirst = 30
-    val winSecond = 15
+    val inputSecond = readln().toInt()
+    val win1 = 30
+    val win2 = 15
 
     when {
-        (a == winFirst && b == winSecond) -> println("Поздравляем! Вы выиграли главный приз!")
-        (a == winSecond && b == winFirst) -> println("Поздравляем! Вы выиграли главный приз!")
-        (a == winFirst || b == winSecond) -> println("Вы выиграли утешительный приз!")
-        (a == winSecond || b == winFirst) -> println("Вы выиграли утешительный приз!")
+        (inputFirst == win1 && inputSecond == win2) || (inputFirst == win2 && inputSecond == win1) -> println("Поздравляем! Вы выиграли главный приз!")
+        (inputFirst == win1 || inputSecond == win2) || (inputFirst == win2 || inputSecond == win1) -> println("Вы выиграли утешительный приз!")
         else -> println("Неудача!")
     }
+    println("Выйгрышные номера: $win1 и $win2")
 }
