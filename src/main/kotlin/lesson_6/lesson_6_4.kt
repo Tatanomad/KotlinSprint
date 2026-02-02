@@ -2,7 +2,7 @@ package lesson_6
 
 fun main() {
     var numberOfAttempts = 5
-    val hiddenNumber = (Math.random() * 10).toInt()
+    val hiddenNumber = (1..9).random()
     var win = false
     println("Я загадал число от 1 до 9. У тебя есть 5 попыток!")
 
