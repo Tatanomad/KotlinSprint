@@ -5,8 +5,8 @@ fun main() {
     var correctResult = false
 
     while (numberOfAttempts > 0 && correctResult == false) {
-        val number1 = (Math.random() * 10).toInt()
-        val number2 = (Math.random() * 10).toInt()
+        val number1 = (1..9).random()
+        val number2 = (1..9).random()
         println("Решите пример: $number1 + $number2")
         val summResult = number1 + number2
         val userDecision = readln().toInt()
