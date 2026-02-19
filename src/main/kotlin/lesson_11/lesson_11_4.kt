@@ -16,6 +16,7 @@ class Recipe (
     val ingredients:List<String>,
     val numberOfPortions: Int,
     val mealPrep:String,
+    val addToFavourite:Boolean,
 )
 
 class Ingredient(
