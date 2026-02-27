@@ -1,6 +1,6 @@
 package lesson_13
 
-class PhoneBook2(
+class MyContact(
     val name: String,
     val phoneNumber: Long,
     val company: String?,
@@ -11,22 +11,25 @@ class PhoneBook2(
 }
 
 fun main() {
-    val contacts = mutableListOf<PhoneBook2>()
-    println("Введите имя")
-    val newName = readln()
-    println("Введите номер телефона")
-    val newPhoneNumber = readln().toLongOrNull()
-    if (newPhoneNumber == null)
-        println("Номер телефона не введен, запись не добавлена")
-    else {
+    val contacts = mutableListOf<MyContact>()
+    println("Заполним контакт. Напиши \"стоп\" в поле имени, чтобы выйти")
+    while (true) {
+        println("Введите имя")
+        val newName = readln()
+        if (newName.lowercase() == "стоп") break
+        println("Введите номер телефона")
+        val newPhoneNumber = readln().toLongOrNull()
+        if (newPhoneNumber == null) {
+            println("Номер телефона не введен, запись не добавлена")
+            continue
+        }
         println("Введите название компании")
         val inputCompany = readln()
-        val newCompany = if (inputCompany.isBlank()) null
-        else inputCompany
+        val newCompany = inputCompany.ifBlank { null }
 
-        val newContact = PhoneBook2(newName, newPhoneNumber, newCompany)
+        val newContact = MyContact(newName, newPhoneNumber, newCompany)
         contacts.add(newContact)
-        contacts.forEach { it.printContactInfo() }
-
     }
+    contacts.forEach { it.printContactInfo() }
+
 }
