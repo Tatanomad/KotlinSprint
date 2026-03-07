@@ -1,6 +1,6 @@
 package lesson_16
 
-private class Round(val radius: Double) {
+class Round(private val radius: Double) {
     private val pi: Double = 3.14
     fun circumference() = 2 * pi * radius
     fun circleArea() = pi * radius * radius
