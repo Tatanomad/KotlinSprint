@@ -8,12 +8,20 @@ enum class Ammunition(val damage: Int, val title: String) {
 }
 
 class Tank {
-    fun weapons(ammunition: Ammunition) {
-        println("У вас ${ammunition.title} патроны")
+    private var currentAmmunition: Ammunition? = null
+
+    fun weapons(ammo: Ammunition) {
+        currentAmmunition = ammo
+        println("У вас ${ammo.title} патроны")
     }
 
-    fun shooting(ammunition: Ammunition) {
-        println("Нанесенный урон: ${ammunition.damage}")
+    fun shooting() {
+        val ammo = currentAmmunition
+        if (ammo != null)
+            println("Нанесенный урон: ${ammo.damage}")
+        else
+            println("Танк не заряжен.")
+
     }
 }
 
@@ -21,6 +29,6 @@ fun main() {
     val t34 = Tank()
     val currentAmmunition = Ammunition.BLUE
     t34.weapons(currentAmmunition)
-    t34.shooting(currentAmmunition)
-
+    t34.shooting()
 }
+
