@@ -1,21 +1,23 @@
 package lesson_19
 
-enum class StarshipAction {
-    TAKEOFF,
-    LANDING,
-    SHOOTING;
+class StarshipAction(val name: String) {
 
-    fun action() {
-        when (this) {
-            TAKEOFF -> TODO("Реализация не готова, не забыть добавить")
-            LANDING -> TODO()
-            SHOOTING -> println("Выстрел произведен!")
-        }
+    fun takeOff() {
+        TODO("Реализация не готова, не забыть добавить")
+    }
+
+    fun landing() {
+        error("Логика приземления не реализована")
+    }
+
+    fun shooting() {
+        TODO()
     }
 }
 
 fun main() {
-    StarshipAction.LANDING.action()
-    StarshipAction.TAKEOFF.action()
+    val ship = StarshipAction("Alpha-1")
 
+    println("Корабль ${ship.name} готов к работе.")
+    ship.landing()
 }
